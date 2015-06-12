@@ -60,7 +60,7 @@ module.exports = {
               id: "http://recurry/scheduler"
               type: "string"
               required: true
-              default: "every 5 minutes"
+              default: "5 minutes"
     "/scheduler":
       get:
         description: "returns complete content of scheduled jobs"
@@ -93,7 +93,7 @@ module.exports = {
             scheduler:
               id: "http://recurry/scheduler"
               type: "string"
-              default: "every 5 minutes"
+              default: "5 minutes"
         function: (req,res,next,lib) ->
           lib.cache.scheduler.push {
             id: req.body.id || (lib.cache.scheduler.length+1)
