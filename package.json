@@ -1,8 +1,8 @@
 {
-  "name": "lb.recurry",
+  "name": "recurry",
   "version": "0.0.1",
   "description": "",
-  "main": "app.js",
+  "main": "server",
   "scripts": {
     "test": "echo js-testfile goes here in package.json; exit 0"
   },
