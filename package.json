@@ -1,11 +1,12 @@
 {
   "name": "recurry",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "",
   "main": "server",
   "scripts": {
     "test": "echo js-testfile goes here in package.json; exit 0"
   },
+  "bin": "./server"
   "author": "",
   "license": "GPL3",
   "dependencies": {
