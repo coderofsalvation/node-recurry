@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo js-testfile goes here in package.json; exit 0"
   },
-  "bin": "./server"
+  "bin": "./server",
   "author": "",
   "license": "GPL3",
   "dependencies": {
