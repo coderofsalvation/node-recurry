@@ -1,10 +1,14 @@
 {
   "name": "recurry",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "",
   "main": "server",
   "scripts": {
     "test": "echo js-testfile goes here in package.json; exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coderofsalvation/hubot-recurry"
   },
   "bin": "./server",
   "author": "",
