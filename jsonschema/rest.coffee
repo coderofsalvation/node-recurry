@@ -51,7 +51,7 @@ module.exports = {
             delete scheduler.timer
           lib.startScheduler(scheduler,freq)
           lib.updateScheduler(scheduler) 
-          res.send {ok:true,msg:"stopped and update, now please start the scheduler" }
+          res.send {ok:true} 
           next()
         payload:
           type: "object",
