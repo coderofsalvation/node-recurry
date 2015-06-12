@@ -1,0 +1,14 @@
+#!/bin/bash 
+
+DEBUG=1 PORT=3333 ./server &
+PID=$!
+
+sleep 2s
+
+[[ -f cache.json ]] && rm cache.json
+
+curl -s -X GET   "http://0.0.0.0:3333/doc" > rest.txt
+curl -X POST  "http://0.0.0.0:3333/scheduler" -H "Content-Type: application/json" -d '{"url":"lb.puby.2webapp.com/api/add","method":"post","payload":{"foo":"bar"}}'
+curl -X GET   "http://0.0.0.0:3333/scheduler" 
+
+kill -9 $PID

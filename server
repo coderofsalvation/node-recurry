@@ -1,0 +1,13 @@
+#!/usr/bin/env coffee
+lib = require('./src/lib.coffee')
+
+#puby.getQueue "scraper/result", (job,done) ->
+#  console.dir job.data
+#  #done(new Error("foo happened"))
+#  done()
+
+lib.init (lib) ->
+  server = require('./src/server.coffee').getServer(lib)
+  server.listen process.env.PORT, ->
+    console.log '%s listening at %s', server.name, server.url
+    return
