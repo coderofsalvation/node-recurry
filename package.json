@@ -1,17 +1,17 @@
 {
   "name": "recurry",
-  "version": "0.0.16",
-  "description": "",
+  "version": "0.0.17",
+  "description": "recurring REST call scheduler (instead of cron+flock)",
   "main": "server",
   "scripts": {
     "test": "echo js-testfile goes here in package.json; exit 0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/coderofsalvation/hubot-recurry"
+    "url": "https://github.com/coderofsalvation/recurry"
   },
   "bin": "./server",
-  "author": "",
+  "author": "Leon van Kammen / Coder of Salvation",
   "license": "GPL3",
   "dependencies": {
     "flat-file-cache": "0.0.1",
