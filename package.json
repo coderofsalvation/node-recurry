@@ -1,6 +1,6 @@
 {
   "name": "recurry",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "recurring REST call scheduler (instead of cron+flock)",
   "main": "server",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/coderofsalvation/recurry"
+    "url": "https://github.com/coderofsalvation/node-recurry"
   },
   "bin": "./server",
   "author": "Leon van Kammen / Coder of Salvation",
