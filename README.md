@@ -37,6 +37,10 @@ Documentation of API endpoints
 
 stops and removes a scheduler
 
+### PUT /scheduler/trigger/:id
+
+manually triggers a scheduler id
+
 ### PUT /scheduler/action/:id
 
 starts/stops/pauses/resumes a scheduler
@@ -61,7 +65,8 @@ JSON Schema:
              "start",
              "stop",
              "pause",
-             "resume"
+             "resume",
+             "trigger"
            ]
          }
        }
@@ -74,7 +79,7 @@ sets the scheduler
 Example payload:
 
      {
-       "scheduler": "every 5 minutes"
+       "scheduler": "5 minutes"
      }
 
 JSON Schema:
@@ -86,7 +91,7 @@ JSON Schema:
            "id": "http://recurry/scheduler",
            "type": "string",
            "required": true,
-           "default": "every 5 minutes"
+           "default": "5 minutes"
          }
        }
      }
@@ -106,7 +111,7 @@ Example payload:
        "id": "call foo",
        "url": "http://foo.com/ping",
        "payload": {},
-       "scheduler": "every 5 minutes"
+       "scheduler": "5 minutes"
      }
 
 JSON Schema:
@@ -145,7 +150,7 @@ JSON Schema:
          "scheduler": {
            "id": "http://recurry/scheduler",
            "type": "string",
-           "default": "every 5 minutes"
+           "default": "5 minutes"
          }
        }
      }

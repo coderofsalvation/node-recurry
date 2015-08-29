@@ -68,6 +68,7 @@ obj.execute = (scheduler) ->
   }
   console.log new Date()+" every "+scheduler.scheduler+": "+scheduler.method+" "+scheduler.url
   data.json = scheduler.payload if scheduler.payload and scheduler.method != "get"
+  console.dir data 
   request data, (err,res,body) ->
     console.dir body 
     console.error err if err

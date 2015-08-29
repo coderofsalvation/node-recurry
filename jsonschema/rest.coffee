@@ -13,6 +13,18 @@ module.exports = {
           res.send {ok:true}
           next()
           
+    "/scheduler/trigger/:id":
+      put:
+        description: "manually triggers a scheduler id"
+        function: (req,res,next,lib) ->
+          scheduler = lib.getScheduler(req.params.id) 
+          return res.send {code:3, msg: "cannot update nonexisting id" } if not scheduler 
+          lib.execute scheduler 
+          scheduler.status = "triggered"
+          lib.updateCache()
+          res.send {ok:true}
+          next()
+
     "/scheduler/action/:id":
       put:
         description: "starts/stops/pauses/resumes a scheduler"
@@ -32,7 +44,7 @@ module.exports = {
               type: "string"
               required: true
               default: "pause"
-              enum: ["start","stop","pause","resume"] 
+              enum: ["start","stop","pause","resume","trigger"] 
         
     "/scheduler/rule/:id":
       put:
