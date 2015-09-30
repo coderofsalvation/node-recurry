@@ -1,6 +1,6 @@
 {
   "name": "recurry",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "recurring REST call scheduler (instead of cron+flock)",
   "main": "server",
   "scripts": {
@@ -20,6 +20,8 @@
     "json-schema-defaults": "^0.1.1",
     "setinterval-plus": "^1.0.2",
     "english-time": "0.0.9",
-    "request": "^2.57.0"
+    "request": "^2.57.0",
+    "coffeerest-api": "^0.1.28",
+    "coffeerest-api-doc": "^0.1.46"
   }
 }

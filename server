@@ -1,13 +1,15 @@
 #!/usr/bin/env coffee
-lib = require('./src/lib.coffee')
+restify    = require('restify')
+coffeerest = require('coffeerest-api')
+model      = require('./src/model.coffee')
+lib        = require('./src/lib.coffee')
 
-#puby.getQueue "scraper/result", (job,done) ->
-#  console.dir job.data
-#  #done(new Error("foo happened"))
-#  done()
+server = restify.createServer { name:model.name }
+server.use restify.queryParser()
+server.use restify.bodyParser()
+server.use coffeerest server, { "":model }, lib # multiversion support
 
 lib.init (lib) ->
-  server = require('./src/server.coffee').getServer(lib)
-  server.listen process.env.PORT, ->
-    console.log '%s listening at %s', server.name, server.url
-    return
+  server.listen process.env.PORT, () ->
+   console.log '%s listening at %s', server.name, server.url
+
