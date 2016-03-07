@@ -1,6 +1,6 @@
 {
   "name": "recurry",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "recurring REST call scheduler (instead of cron+flock)",
   "main": "server",
   "scripts": {
@@ -13,6 +13,9 @@
   "bin": "./server",
   "author": "Leon van Kammen / Coder of Salvation",
   "license": "GPL3",
+  "keywords":[
+    "cron","rest","scheduler","recurring","hubot","payload","api"
+  ],
   "dependencies": {
     "flat-file-cache": "0.0.1",
     "restify": "^3.0.3",
