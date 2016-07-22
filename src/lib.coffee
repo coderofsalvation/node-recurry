@@ -5,7 +5,7 @@ _setInterval = require('setinterval-plus')
 
 obj = {}
 
-obj.cacheFile = new flat('.')
+obj.cacheFile = new flat( process.env.RECURRY_CACHEFILE || '')
 
 obj.updateCache = () ->
   this.cacheFile.set "cache", this.cache

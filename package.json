@@ -1,6 +1,6 @@
 {
   "name": "recurry",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "recurring REST call scheduler (instead of cron+flock)",
   "main": "server",
   "scripts": {

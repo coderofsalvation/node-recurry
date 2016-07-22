@@ -9,6 +9,11 @@ Recurry does recurring REST calls, with a nice degree of (remote) control.
 
 You can think of recurry as cron+flock on a unix platform, except without the files (but a REST interface).
 
+# Usage 
+
+    $ npm install recurry coffee-script
+    $ RECURRY_CACHEFILE="cache.json" ./server
+
 > NOTE: Recurry supports persistance, but does not require a database (instead it uses a local jsonfile)
 
 # Hubot interface 
