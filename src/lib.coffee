@@ -3,9 +3,22 @@ time = require('english-time')
 request = require('request')
 _setInterval = require('setinterval-plus')
 
+Cache = (file) ->
+  @file = file
+  @cache = require(file)
+  @set = (key,value) =>
+    @cache[key] = value
+    require('fs').fileWriteSync( file, JSON.stringify(@cache,null,2) )
+
+  @get = (key,cb) =>
+    cb(@cache[key]) if cb
+    return @cache[key] 
+
+  return @
+
 obj = {}
 
-obj.cacheFile = new flat( process.env.RECURRY_CACHEFILE || '')
+obj.cacheFile = new Cache( process.env.RECURRY_CACHEFILE || process.cwd()+'/cache.json' )
 
 obj.updateCache = () ->
   this.cacheFile.set "cache", this.cache
