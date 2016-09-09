@@ -12,6 +12,7 @@ You can think of recurry as cron+flock on a unix platform, except without the fi
 # Usage 
 
     $ npm install recurry coffee-script
+    $ echo '{"scheduler":[],"timers":[]}' > cache.json
     $ RECURRY_CACHEFILE="cache.json" ./server
 
 > NOTE: Recurry supports persistance, but does not require a database (instead it uses a local jsonfile)
