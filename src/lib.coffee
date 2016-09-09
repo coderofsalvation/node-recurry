@@ -13,9 +13,13 @@ obj.updateCache = () ->
 obj.init = (cb) ->
   me = this
   this.cacheFile.get 'cache', (result) ->
-    me.cache = result || {"scheduler":[],"timers":[]}
-    me.startSchedulers(me.cache)
-    cb(me)
+    if result
+      me.cache = result || {"scheduler":[],"timers":[]}
+      me.startSchedulers(me.cache)
+      cb(me)
+    else setTimeout () ->
+      me.init(cb)
+    , 500
 
 obj.getScheduler = (id) ->
   for obj in this.cache.scheduler
