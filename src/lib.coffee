@@ -8,7 +8,7 @@ Cache = (file) ->
   @cache = require(file)
   @set = (key,value) =>
     @cache[key] = value
-    require('fs').fileWriteSync( file, JSON.stringify(@cache,null,2) )
+    require('fs').writeFileSync( file, JSON.stringify(@cache,null,2) )
 
   @get = (key,cb) =>
     cb(@cache[key]) if cb
